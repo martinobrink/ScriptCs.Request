@@ -59,13 +59,15 @@ namespace ScriptCs.Request
         private void SetOptionalHeaders(HttpClient httpClient, AuthenticationHeaderValue authenticationHeaderValue = null, Dictionary<string, string> customHeaders = null)
         {
             if (authenticationHeaderValue != null)
+            {
                 httpClient.DefaultRequestHeaders.Authorization = authenticationHeaderValue;
+            }
 
             if (customHeaders != null)
             {
-                foreach (var ch in customHeaders)
+                foreach (var customHeader in customHeaders)
                 {
-                    httpClient.DefaultRequestHeaders.Add(ch.Key, ch.Value);
+                    httpClient.DefaultRequestHeaders.Add(customHeader.Key, customHeader.Value);
                 }
             }
         }
