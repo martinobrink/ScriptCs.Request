@@ -26,6 +26,8 @@ namespace ScriptCs.Request
             //This method can import namespaces for use in your scripts to help 
             //keep user's scripts clean and simple.
             session.ImportNamespace("System.Net.Http");
+            session.ImportNamespace("System.Net.Http.Headers");
+            session.ImportNamespace("System.Collections.Generic");
             session.ImportNamespace("Newtonsoft.Json");
         }
 
