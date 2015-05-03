@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>ScriptCs.Request</id>
+    <version>1.0.0</version>
+    <authors>Martin Öbrink-Hansen, John Crnjanin</authors>
+    <owners>Martin Öbrink-Hansen</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/martinobrink/ScriptCs.Request</projectUrl>
+    <copyright>@martinobrink</copyright>
+    <summary>A cross-platform script library which enables very declarative scripts for performing http requests (including json serialization of objects using Json.NET)</summary>
+    <description>
+      A cross-platform http request script library.
+      
+      Using this script library you can write very simple declarative scripts for performing http requests without all the boilerplate code normally required for this.
+
+      You can even define your own classes and they will automatically get serialized using Json.NET when using POST and PUT methods.
+
+      Please go to the project url https://github.com/martinobrink/ScriptCs.Request to see examples on how simple your scripts can get.</description>
+    <language>en-US</language>
+    <tags>scriptcs http request cross-platform Json.NET</tags>
+    <releaseNotes>v1.0.0: Rewrote script pack into script library and used System.Net.HttpClient instead of Microsoft.Net.HttpClient to make the library cross-platform. </releaseNotes>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="6.0.8" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="RequestMain.csx" target="Content\scriptcs\RequestMain.csx" />
+  </files>
+</package>
