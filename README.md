@@ -1,8 +1,8 @@
 ScriptCs.Request
 =================
-A ScriptCs script pack which allows you to write clean, declarative and non-boilerplate http requests from your scriptcs (.csx) files.
+A cross-platform ScriptCs script library which allows you to write clean, declarative and non-boilerplate http requests from your scriptcs (.csx) files.
 
-Using this script pack you can write very simple scripts similar to this:
+Using this cross-platform script library you can write very simple scripts similar to this:
 
 
 	public class Notification
@@ -10,10 +10,15 @@ Using this script pack you can write very simple scripts similar to this:
 		public string Message {get; set;}
 		public string SenderName {get; set;}
 	}
+	
+	var request = new Request();
+	
+	var notifications = request.GetJson<List<Notification>>("http://your.site.com/api/notification");
+	Console.WriteLine("First notification message: " + notifications[0].Message);
+	
 	var notificationToSend = new Notification { Message = "Merry christmas!", SenderName = "Santa"};
-	var client = Require<Request>();
-	var result = client.PostJson("http://your.site.com/api/notification", notificationToSend);
-	Console.WriteLine("Response status code: " + result.StatusCode);
+	var response = request.PostJson("http://your.site.com/api/notification", notificationToSend);
+	Console.WriteLine("Response status code: " + response.StatusCode);	
 
 
-The script pack also has the Json.NET namespace available so you can make use of different Json.NET serialization possibilities (e.g. [JsonIgnore]) to suit your needs. 
+The script library also has the Json.NET namespace available so you can make use of different Json.NET serialization possibilities (e.g. [JsonIgnore]) to suit your needs. 
